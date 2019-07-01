@@ -6,7 +6,7 @@ Install the Application => Apps -> Customer Sale History (Technical Name: custom
 
 Version
 ========
-	Odoo 11 version
+	Odoo 12 version
 
 Module Configuration Guideline
 ==============================
