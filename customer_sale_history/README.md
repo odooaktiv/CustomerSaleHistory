@@ -1,4 +1,4 @@
-Open ERP System :- Odoo 11 Version 
+Open ERP System :- Odoo 10 Version 
 
 Installation 
 ============
@@ -6,7 +6,7 @@ Install the Application => Apps -> Customer Sale History (Technical Name: custom
 
 Version
 ========
-	Odoo 12 version
+	Odoo 10 version
 
 Module Configuration Guideline
 ==============================

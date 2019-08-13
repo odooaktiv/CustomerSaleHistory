@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 # © 2018-Today Aktiv Software (http://www.aktivsoftware.com).
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
@@ -12,14 +14,18 @@ class ResPartner(models.Model):
 
     def _compute_sale_product_count(self):
         sale_product_data = self.env['sale.order.line'].read_group(domain=[(
-            'order_partner_id', 'child_of', self.ids), (
-            'is_downpayment', '=', False)], fields=['order_partner_id'],
+            'order_partner_id', 'child_of', self.ids)],
+            fields=['order_partner_id'],
             groupby=['order_partner_id'])
+        # remove ('is_downpayment', '=', False) from domain
+        print("\n\n\n sale_product_data", sale_product_data)
         # read to keep the child/parent relation
         # while aggregating the read_group result in the loop
         partner_child_ids = self.read(['child_ids'])
+        print("\n\n\n\n partner_child_ids", partner_child_ids)
         mapped_data = dict([(sale_data['order_partner_id'][0], sale_data[
             'order_partner_id_count']) for sale_data in sale_product_data])
+        print("\n\n\n mapped_data", mapped_data)
         for partner in self:
             # let's obtain the partner id and
             # all its child ids from the read up there

@@ -20,10 +20,10 @@
     'license': "AGPL-3",
 
     'category': 'Sales',
-    'version': '12.0.1.0.1',
+    'version': '10.0.1.0.0',
 
     # any module necessary for this one to work correctly
-    'depends': ['sale_management'],
+    'depends': ['sale'],
 
     # always loaded
     'data': [
